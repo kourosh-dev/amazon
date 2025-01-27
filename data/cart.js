@@ -1,5 +1,3 @@
-import { products } from "./products.js";
-
 export const cart = [];
 
 // add to cart
@@ -23,3 +21,15 @@ export function addToCart(productId) {
     });
   }
 }
+
+// show cart quantity
+export function showCartQuantity() {
+  let cartQuantity = 0;
+
+  cart.forEach(item => {
+    cartQuantity += item.quantity;
+  });
+
+  document.querySelector('.js-cart-quantity').innerHTML = cartQuantity;
+}
+showCartQuantity();

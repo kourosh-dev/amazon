@@ -1,5 +1,5 @@
 import { products } from '../data/products.js';
-import { addToCart } from '../data/cart.js';
+import { addToCart, showCartQuantity } from '../data/cart.js';
 
 products.forEach(product => {
   let html = `
@@ -61,5 +61,6 @@ const addToCartBtn = document.querySelectorAll('.js-add-to-cart');
 addToCartBtn.forEach(btn => {
   btn.addEventListener('click', () => {
     addToCart(btn.dataset.productId);
+    showCartQuantity();
   });
 });
