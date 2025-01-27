@@ -1,15 +1,25 @@
 import { products } from "./products.js";
 
-export const carts = [];
+export const cart = [];
 
 // add to cart
 export function addToCart(productId) {
+  let exist;
 
-  products.forEach(product => {
-    const id = product.id;
-    
-    if (id === productId) {
-      carts.push(product);
+  cart.forEach(cart => {
+    const cartId = cart.id;
+
+    if (cartId === productId) { 
+      exist = cart;
     }
   });
+
+  if (exist) {
+    exist.quantity += 1;
+  } else {
+    cart.push({
+      id: productId,
+      quantity: 1,
+    });
+  }
 }
