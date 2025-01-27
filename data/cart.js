@@ -1,7 +1,7 @@
 export const cart = [];
 
 // add to cart
-export function addToCart(productId) {
+export function addToCart(productId, quantity) {
   let exist;
 
   cart.forEach(cart => {
@@ -13,11 +13,11 @@ export function addToCart(productId) {
   });
 
   if (exist) {
-    exist.quantity += 1;
+    exist.quantity += quantity;
   } else {
     cart.push({
       id: productId,
-      quantity: 1,
+      quantity: quantity,
     });
   }
 }
