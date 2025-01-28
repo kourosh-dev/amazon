@@ -56,12 +56,12 @@ products.forEach(product => {
   document.querySelector('.js-grid-products').innerHTML += html;
 });
 
-// adding to cart
 const addToCartBtn = document.querySelectorAll('.js-add-to-cart');
 
 // time out id
 let timeOutId;
 
+// adding to cart
 addToCartBtn.forEach(btn => {
   btn.addEventListener('click', () => {
     const productId = btn.dataset.productId;
