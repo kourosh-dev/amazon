@@ -57,6 +57,7 @@ products.forEach(product => {
 });
 
 const addToCartBtn = document.querySelectorAll('.js-add-to-cart');
+const showCartElm = document.querySelector('.js-cart-quantity');
 
 // time out id
 let timeOutId;
@@ -70,7 +71,7 @@ addToCartBtn.forEach(btn => {
     const quantity = Number(selectElm.value);
 
     addToCart(productId, quantity);
-    showCartQuantity();
+    showCartElm.innerHTML = showCartQuantity();
 
     // show added icon
     const addedIcon = document.querySelector(`.js-added-icon-${productId}`);
@@ -84,3 +85,6 @@ addToCartBtn.forEach(btn => {
     }, 2000);
   });
 });
+
+// 
+showCartElm.innerHTML = showCartQuantity();
